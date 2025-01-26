@@ -1,0 +1,33 @@
+<div class="register-container">
+    <h2>Register</h2>
+    <div *ngIf="isRegistered" class="success-message">
+        Registration Successful!
+      </div>
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+      <label for="email">Email:</label>
+      <input id="email" type="email" formControlName="email" />
+      <div *ngIf="registerForm.get('email')?.invalid && registerForm.get('email')?.touched">
+        Please enter a valid email.
+      </div>
+  
+      <label for="password">Password:</label>
+      <input id="password" type="password" formControlName="password" />
+      <div *ngIf="registerForm.get('password')?.invalid && registerForm.get('password')?.touched">
+        Password must be at least 6 characters long.
+      </div>
+  
+      <label for="role">Role:</label>
+      <select id="role" formControlName="role">
+        <option value="">Select Role</option>
+        <option value="Buyer">Buyer</option>
+        <option value="Seller">Seller</option>
+      </select>
+      <div *ngIf="registerForm.get('role')?.invalid && registerForm.get('role')?.touched">
+        Please select a role.
+      </div>
+  
+      <button type="submit" [disabled]="registerForm.invalid">Register</button>
+    </form>
+  </div>
+ 
+  
