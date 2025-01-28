@@ -55,4 +55,19 @@ export class AuthService {
   getToken(): string | null {
     return localStorage.getItem('authToken');
   }
+  getRole(): string | null {
+    const token = this.getToken();
+    if (!token) return null;
+
+    try {
+      // Split the token into its 3 parts (header, payload, signature)
+      const payload = JSON.parse(atob(token.split('.')[1]));
+      // Extract the role using the claim key
+      return payload['http://schemas.microsoft.com/ws/2008/06/identity/claims/role'] || null;
+    } catch (e) {
+      console.error('Error decoding token:', e);
+      return null;
+    }
+  }
+
 }

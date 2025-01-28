@@ -1,4 +1,7 @@
 <nav>
+  <div *ngIf="authService.isLoggedIn()">
+    Welcome, {{ authService.getRole() }}!
+  </div>
     <!-- Logout button visible only when logged in -->
     <button *ngIf="isLoggedIn" (click)="onLogout()">Logout</button>
   </nav>
