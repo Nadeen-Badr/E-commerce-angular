@@ -2,6 +2,9 @@
   <div *ngIf="authService.isLoggedIn()">
     Welcome, {{ authService.getRole() }}!
   </div>
+  <button *ngIf="authService.getRole() === 'Seller'" (click)="openCreateProductModal()">
+    Create Product
+  </button>
     <!-- Logout button visible only when logged in -->
     <button *ngIf="isLoggedIn" (click)="onLogout()">Logout</button>
   </nav>

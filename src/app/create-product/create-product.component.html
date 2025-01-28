@@ -1,0 +1,42 @@
+<!-- create-product.component.html -->
+<div class="create-product-container">
+    <h2>Create Product</h2>
+    <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="name">Product Name</label>
+        <input type="text" id="name" formControlName="name" required />
+        <small *ngIf="productForm.get('name')?.invalid && productForm.get('name')?.touched">
+          Product name is required.
+        </small>
+      </div>
+  
+      <div class="form-group">
+        <label for="description">Description</label>
+        <textarea id="description" formControlName="description" required></textarea>
+        <small *ngIf="productForm.get('description')?.invalid && productForm.get('description')?.touched">
+          Description is required.
+        </small>
+      </div>
+  
+      <div class="form-group">
+        <label for="price">Price</label>
+        <input type="number" id="price" formControlName="price" required />
+        <small *ngIf="productForm.get('price')?.invalid && productForm.get('price')?.touched">
+          Price must be a positive number.
+        </small>
+      </div>
+  
+      <div class="form-group">
+        <label for="stock">Stock</label>
+        <input type="number" id="stock" formControlName="stock" required />
+        <small *ngIf="productForm.get('stock')?.invalid && productForm.get('stock')?.touched">
+          Stock must be a positive number.
+        </small>
+      </div>
+  
+      <button type="submit" [disabled]="productForm.invalid">Create Product</button>
+    </form>
+  
+    <p *ngIf="successMessage" class="success-message">{{ successMessage }}</p>
+    <p *ngIf="errorMessage" class="error-message">{{ errorMessage }}</p>
+  </div>
