@@ -43,4 +43,11 @@ export class ProductService {
     });
     return this.http.get(`${this.baseUrl}/${id}`, { headers });
   }
+  editProduct(id: number, productData: any): Observable<any> {
+    const headers = new HttpHeaders({
+      Authorization: `Bearer ${this.authService.getToken()}`,
+      'Content-Type': 'application/json',
+    });
+    return this.http.put(`${this.baseUrl}/${id}`, productData, { headers });
+  }
 }

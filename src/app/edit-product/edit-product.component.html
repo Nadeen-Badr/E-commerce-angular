@@ -1,0 +1,49 @@
+<div class="edit-product-container">
+    <h2>Edit Product</h2>
+  
+    <!-- Loading state -->
+    <div *ngIf="isLoading" class="loading-message">Loading product details...</div>
+  
+    <!-- Error message -->
+    <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+  
+    <!-- Success message -->
+    <div *ngIf="successMessage" class="success-message">{{ successMessage }}</div>
+  
+    <!-- Edit product form -->
+    <form [formGroup]="editProductForm" (ngSubmit)="onSubmit()" *ngIf="!isLoading">
+      <div class="form-group">
+        <label for="name">Product Name</label>
+        <input type="text" id="name" formControlName="name" required />
+        <small *ngIf="editProductForm.get('name')?.invalid && editProductForm.get('name')?.touched">
+          Product name is required.
+        </small>
+      </div>
+  
+      <div class="form-group">
+        <label for="description">Description</label>
+        <textarea id="description" formControlName="description" required></textarea>
+        <small *ngIf="editProductForm.get('description')?.invalid && editProductForm.get('description')?.touched">
+          Description is required.
+        </small>
+      </div>
+  
+      <div class="form-group">
+        <label for="price">Price</label>
+        <input type="number" id="price" formControlName="price" required />
+        <small *ngIf="editProductForm.get('price')?.invalid && editProductForm.get('price')?.touched">
+          Price must be a positive number.
+        </small>
+      </div>
+  
+      <div class="form-group">
+        <label for="stock">Stock</label>
+        <input type="number" id="stock" formControlName="stock" required />
+        <small *ngIf="editProductForm.get('stock')?.invalid && editProductForm.get('stock')?.touched">
+          Stock must be a positive number.
+        </small>
+      </div>
+  
+      <button type="submit" [disabled]="editProductForm.invalid">Update Product</button>
+    </form>
+  </div>

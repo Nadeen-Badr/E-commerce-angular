@@ -15,4 +15,6 @@
       <p><strong>Price:</strong> {{ product.price | currency }}</p>
       <p><strong>Stock:</strong> {{ product.stock }}</p>
     </div>
+    <a [routerLink]="['/edit-product', product.id]">Edit</a>
+
   </div>
