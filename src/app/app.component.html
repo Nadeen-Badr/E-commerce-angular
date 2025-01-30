@@ -5,8 +5,8 @@
   <button *ngIf="authService.getRole() === 'Seller'" (click)="openCreateProductModal()">
     Create Product
   </button>
-  <button *ngIf="isSeller && authService.isLoggedIn()" (click)="viewProducts()">View all Products</button>
-  <button *ngIf="isSeller && authService.isLoggedIn()" (click)="viewMyProducts()">View my Products</button>
+  <button *ngIf="isSeller && isLoggedIn" (click)="viewProducts()">View all Products</button>
+  <button *ngIf="isSeller && isLoggedIn" (click)="viewMyProducts()">View my Products</button>
 
     <!-- Logout button visible only when logged in -->
     <button *ngIf="isLoggedIn" (click)="onLogout()">Logout</button>

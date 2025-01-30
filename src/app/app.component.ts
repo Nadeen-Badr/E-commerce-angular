@@ -27,6 +27,10 @@ export class AppComponent {
     });
   }
   ngOnInit(): void {
+    if (!this.authService.isLoggedIn()) {
+      // If the user is not logged in, redirect to the register page
+      this.router.navigate(['/register']);
+    }
     this.isSeller = this.authService.getRole() === 'Seller';
     if (this.isSeller) {
       this.fetchProducts();

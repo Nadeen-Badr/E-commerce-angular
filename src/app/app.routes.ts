@@ -6,7 +6,7 @@ import { SellerproductsComponent } from './sellerproducts/sellerproducts.compone
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { EditProductComponent } from './edit-product/edit-product.component';
 export const routes: Routes = [ 
-    { path: '', redirectTo: '/register', pathMatch: 'full' },
+    
     { path: 'register', component: RegisterComponent },
     {path: 'sign-in', component: SignInComponent},
     { path: 'products', component: ProductsComponent },
