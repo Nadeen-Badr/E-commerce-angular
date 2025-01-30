@@ -36,3 +36,37 @@ table {
   button:hover {
     background-color: #0056b3;
   }
+  td a {
+    display: inline-block;
+    padding: 10px 15px;
+    margin: 0 10px;
+    text-decoration: none;
+    color: white;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 14px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+  }
+  
+  td a:first-child { /* View Details Button */
+    background-color: #4CAF50; /* Green */
+  }
+  
+  td a:first-child:hover {
+    background-color: #45a049;
+    transform: translateY(-2px); /* Hover effect */
+  }
+  
+  td a:last-child { /* Edit Button */
+    background-color: #FF5722; /* Red-orange */
+  }
+  
+  td a:last-child:hover {
+    background-color: #e64a19;
+    transform: translateY(-2px); /* Hover effect */
+  }
+  
+  td a:focus {
+    outline: none; /* Remove focus outline */
+  }
+  

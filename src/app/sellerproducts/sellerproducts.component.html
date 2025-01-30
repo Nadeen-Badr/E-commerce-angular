@@ -18,7 +18,9 @@
       <td>{{ product.description }}</td>
       <td>{{ product.price }}</td>
       <td>{{ product.stock }}</td>
-      <td> <a [routerLink]="['/product', product.id]">View Details</a></td>
+      <td> <a [routerLink]="['/product', product.id]">View Details</a>
+        <a [routerLink]="['/edit-product', product.id]">Edit</a></td>
+
     </tr>
   </tbody>
 </table>
