@@ -5,7 +5,8 @@
   <button *ngIf="authService.getRole() === 'Seller'" (click)="openCreateProductModal()">
     Create Product
   </button>
-  <button *ngIf="isSeller" (click)="viewProducts()">View Products</button>
+  <button *ngIf="isSeller" (click)="viewProducts()">View all Products</button>
+  <button *ngIf="isSeller" (click)="viewMyProducts()">View my Products</button>
 
   <!-- <div *ngIf="isSeller && products.length > 0">
     <h2>All Products</h2>

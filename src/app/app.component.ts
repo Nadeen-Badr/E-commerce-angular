@@ -47,6 +47,9 @@ export class AppComponent {
   viewProducts() {
     this.router.navigate(['/products']);
   }
+  viewMyProducts() {
+    this.router.navigate(['/my-products']);
+  }
   onLogout(): void {
     this.authService.logout();
    // this.isLoggedIn = false; // Update the login status

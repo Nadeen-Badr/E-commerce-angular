@@ -19,6 +19,13 @@ export class ProductService {
     });
     return this.http.get(this.baseUrl, { headers });
   }
+  getSellerProducts(): Observable<any> {
+    const headers = new HttpHeaders({
+      Authorization: `Bearer ${this.authService.getToken()}`,
+      accept: '*/*',
+    });
+    return this.http.get(`${this.baseUrl}/my-products`, { headers });
+  }
 
   // Create a new product
   createProduct(productData: any): Observable<any> {

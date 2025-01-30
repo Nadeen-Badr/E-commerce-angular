@@ -1,0 +1,25 @@
+
+<h2>All Products</h2>
+<table *ngIf="products.length > 0">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Price</th>
+      <th>Stock</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let product of products">
+      <td>{{ product.id }}</td>
+      <td>{{ product.name }}</td>
+      <td>{{ product.description }}</td>
+      <td>{{ product.price }}</td>
+      <td>{{ product.stock }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- Show a message if no products are found -->
+<p *ngIf="products.length === 0">No products found.</p>
