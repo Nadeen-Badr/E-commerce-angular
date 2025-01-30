@@ -28,4 +28,7 @@ export class SignInComponent {
       }
     );
   }
+  goToRegister() {
+    this.router.navigate(['/register']); // Update with your actual route
+  }
 }

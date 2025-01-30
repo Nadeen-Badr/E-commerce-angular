@@ -5,10 +5,11 @@ import { AuthService } from './services/auth.service';
 import { ProductService } from './services/product.service';
 import { MatDialog } from '@angular/material/dialog';
 import { CreateProductComponent } from './create-product/create-product.component';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet,CommonModule],
+  imports: [RouterOutlet,CommonModule,RouterModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
@@ -51,6 +52,7 @@ export class AppComponent {
   viewMyProducts() {
     this.router.navigate(['/my-products']);
   }
+
   onLogout(): void {
     this.authService.logout();
    // this.isLoggedIn = false; // Update the login status

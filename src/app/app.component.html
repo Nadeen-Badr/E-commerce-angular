@@ -5,13 +5,17 @@
   <button *ngIf="authService.getRole() === 'Seller'" (click)="openCreateProductModal()">
     Create Product
   </button>
-  <button *ngIf="isSeller" (click)="viewProducts()">View all Products</button>
-  <button *ngIf="isSeller" (click)="viewMyProducts()">View my Products</button>
+  <button *ngIf="isSeller && authService.isLoggedIn()" (click)="viewProducts()">View all Products</button>
+  <button *ngIf="isSeller && authService.isLoggedIn()" (click)="viewMyProducts()">View my Products</button>
 
     <!-- Logout button visible only when logged in -->
     <button *ngIf="isLoggedIn" (click)="onLogout()">Logout</button>
   </nav>
-
+  <!-- <div *ngIf="!authService.isLoggedIn()"  class="auth-container">
+    <h1> Please log in or register </h1>
+    <button (click)="onLogout()">Logout</button>
+    <a [routerLink]="['/register']">Register</a>
+   </div> -->
 <!-- This is where routed components will be displayed -->
 <router-outlet></router-outlet>
 

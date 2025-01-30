@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { AuthService } from '../../services/auth.service';
 import { CommonModule } from '@angular/common'; // Import CommonModule
-
+import { Router } from '@angular/router';
 @Component({
   standalone: true,
   selector: 'app-register',
@@ -14,7 +14,7 @@ export class RegisterComponent {
   registerForm: FormGroup;
   isRegistered: boolean = false;
 
-  constructor(private fb: FormBuilder, private authService: AuthService) {
+  constructor(private fb: FormBuilder, private authService: AuthService,private router: Router) {
     this.registerForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(6)]],
@@ -36,5 +36,8 @@ export class RegisterComponent {
         },
       });
     }
+  }
+  goToLogin() {
+    this.router.navigate(['/sign-in']); // Update with your actual route
   }
 }
