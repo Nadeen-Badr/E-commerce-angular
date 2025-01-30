@@ -2,3 +2,10 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body {
+    background: linear-gradient(to right, #000000, #006666);
+    color: white; /* Ensures text is readable */
+    min-height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}

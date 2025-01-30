@@ -1,38 +1,65 @@
+/* Style for the main heading */
+h2 {
+  text-align: center;
+  color: #FFFFFF; /* White for the heading */
+  margin-bottom: 2rem;
+}
+
+/* Style for the table container */
 table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-  }
-  
-  th,
-  td {
-    border: 1px solid #ddd;
-    padding: 8px;
-    text-align: left;
-  }
-  
-  th {
-    background-color: #f4f4f4;
-  }
-  
-  tr:nth-child(even) {
-    background-color: #f9f9f9;
-  }
-  
-  tr:hover {
-    background-color: #f1f1f1;
-  }
-  
-  button {
-    background-color: #007bff;
-    color: white;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-bottom: 20px;
-  }
-  
-  button:hover {
-    background-color: #0056b3;
-  }
+  width: 100%;
+  border-collapse: collapse;
+  background-color: rgba(0, 0, 0, 0.8); /* Dark semi-transparent background for the table */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  color: #FFFFFF; /* White text for table */
+}
+
+/* Style for table headers */
+thead {
+  background-color: #006666; /* Dark teal background for the header */
+  color: #FFFFFF; /* White text */
+}
+
+thead th {
+  padding: 1rem;
+  text-align: left;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+/* Style for table rows */
+tbody tr {
+  background-color: rgba(255, 255, 255, 0.1); /* Slightly transparent white for rows */
+  border-bottom: 1px solid #4D6D6D; /* Soft teal-gray border between rows */
+}
+
+tbody tr:hover {
+  background-color: rgba(0, 150, 136, 0.2); /* Hover effect with a light teal */
+}
+
+tbody td {
+  padding: 1rem;
+  text-align: left;
+  font-size: 1rem;
+}
+
+/* Style for the "View Details" link */
+tbody td a {
+  color: #009688; /* Teal color for the link */
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+tbody td a:hover {
+  color: #33A6A6; /* Lighter teal on hover */
+}
+
+/* Message for when no products are found */
+p {
+  text-align: center;
+  color: #E53935; /* Muted red for error or no data messages */
+  font-weight: bold;
+  margin-top: 2rem;
+}

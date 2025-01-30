@@ -1,29 +1,66 @@
+/* Style for the product details container */
 .product-details-container {
+    background-color: rgba(0, 0, 0, 0.8); /* Dark background */
+    color: white; /* White text for readability */
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     max-width: 600px;
-    margin: 20px auto;
-    padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    background-color: #f9f9f9;
-  }
-  
-  h2 {
+    margin: 2rem auto;
+}
+
+/* Heading */
+h2 {
     text-align: center;
-    margin-bottom: 20px;
-  }
-  
-  .product-details p {
-    font-size: 16px;
-    margin: 10px 0;
-  }
-  
-  .loading-message,
-  .error-message {
+    color: #FFFFFF;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+/* Style for loading message */
+.loading-message {
     text-align: center;
-    font-size: 18px;
-    margin-top: 20px;
-  }
-  
-  .error-message {
-    color: red;
-  }
+    font-size: 1.2rem;
+    color: #009688; /* Teal color */
+    font-weight: bold;
+}
+
+/* Style for error message */
+.error-message {
+    color: #E53935; /* Red color for error */
+    font-weight: bold;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+/* Style for the product details section */
+.product-details {
+    margin-top: 1.5rem;
+}
+
+.product-details p {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+}
+
+.product-details strong {
+    color: #009688; /* Teal color for labels */
+}
+
+/* Style for the Edit link */
+a {
+    display: block;
+    text-align: center;
+    font-size: 1.2rem;
+    color: #006666; /* Dark teal color */
+    text-decoration: none;
+    margin-top: 2rem;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+/* Edit link hover effect */
+a:hover {
+    color: #33A6A6; /* Lighter teal color */
+}

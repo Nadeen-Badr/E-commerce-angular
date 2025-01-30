@@ -1,46 +1,127 @@
-/* create-product.component.css */
 .create-product-container {
-    max-width: 500px;
-    margin: 0 auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  .form-group {
-    margin-bottom: 15px;
-  }
-  
-  label {
-    display: block;
-    margin-bottom: 5px;
-  }
-  
-  input,
-  textarea {
-    width: 100%;
-    padding: 8px;
-    box-sizing: border-box;
-  }
-  
-  button {
-    background-color: #007bff;
-    color: white;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  button:disabled {
-    background-color: #ccc;
-    cursor: not-allowed;
-  }
-  
-  .success-message {
-    color: green;
-  }
-  
-  .error-message {
-    color: red;
-  }
+  background: #1E1E1E; /* Dark gray for a modern card-like look */
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  max-width: 500px;
+  margin: 2rem auto;
+  color: #E0E0E0; /* Light gray text */
+}
+
+.create-product-container h2 {
+  text-align: center;
+  color: #FFFFFF; /* White for contrast */
+  margin-bottom: 1.5rem;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: #FFFFFF;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #4D6D6D; /* Soft teal-gray */
+  border-radius: 5px;
+  background: #000000; /* Black input fields */
+  color: #FFFFFF;
+  font-size: 1rem;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #009688; /* Teal focus effect */
+  outline: none;
+}
+
+.form-group small {
+  color: #E53935; /* Muted red for error messages */
+  font-size: 0.9rem;
+  display: block;
+  margin-top: 0.3rem;
+}
+
+button {
+  background: #009688; /* Primary teal */
+  color: #FFFFFF;
+  border: none;
+  padding: 0.75rem;
+  width: 100%;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background: #33A6A6; /* Lighter teal */
+  transform: scale(1.05);
+}
+
+button:disabled {
+  background: #4D6D6D; /* Soft teal-gray for disabled state */
+  cursor: not-allowed;
+}
+
+.success-message {
+  color: #4CAF50; /* Soft green for success messages */
+  text-align: center;
+  font-weight: bold;
+  margin-top: 1rem;
+}
+
+.error-message {
+  color: #E53935; /* Muted red for error messages */
+  text-align: center;
+  font-weight: bold;
+  margin-top: 1rem;
+}
+.custom-dialog .mat-dialog-container {
+  background: rgba(0, 0, 0, 0.6) !important; /* Semi-transparent black */
+  color: black !important; /* Make all text black */
+  border-radius: 10px;
+  padding: 2rem;
+}
+/* Target the outer dialog container */
+.custom-dialog .mat-dialog-container {
+  background: rgba(0, 0, 0, 0.6) !important; /* Transparent background */
+  color: black !important; /* Ensure text inside the dialog is black */
+  border-radius: 10px;
+  padding: 2rem;
+  box-shadow: none !important; /* Remove default Material shadow */
+  backdrop-filter: blur(8px); /* Optional: Adds glassmorphism blur effect */
+}
+
+/* Optional: Style form inputs to be more visible */
+.custom-dialog input,
+.custom-dialog textarea {
+  background: rgba(255, 255, 255, 0.8); /* Slightly transparent white for inputs */
+  color: black;
+  border: 1px solid #009688; /* Teal border for inputs */
+}
+
+/* Optional: Style the button */
+.custom-dialog button {
+  background: #009688; /* Primary teal */
+  color: white;
+  border: none;
+  padding: 0.75rem;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.custom-dialog button:hover {
+  background: #33A6A6; /* Lighter teal */
+  transform: scale(1.05);
+}

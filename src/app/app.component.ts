@@ -22,6 +22,7 @@ export class AppComponent {
   openCreateProductModal(): void {
     this.dialog.open(CreateProductComponent, {
       width: '500px',
+      panelClass: 'custom-dialog'
     });
   }
   ngOnInit(): void {
