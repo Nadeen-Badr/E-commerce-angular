@@ -5,6 +5,36 @@
   <button *ngIf="authService.getRole() === 'Seller'" (click)="openCreateProductModal()">
     Create Product
   </button>
+  <button *ngIf="isSeller" (click)="viewProducts()">View Products</button>
+
+  <!-- <div *ngIf="isSeller && products.length > 0">
+    <h2>All Products</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Description</th>
+          <th>Price</th>
+          <th>Stock</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let product of products">
+          <td>{{ product.id }}</td>
+          <td>{{ product.name }}</td>
+          <td>{{ product.description }}</td>
+          <td>{{ product.price }}</td>
+          <td>{{ product.stock }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div> -->
+
+  <!-- Show a message if no products are found -->
+  <!-- <div *ngIf="isSeller && products.length === 0">
+    <p>No products found.</p>
+  </div> -->
     <!-- Logout button visible only when logged in -->
     <button *ngIf="isLoggedIn" (click)="onLogout()">Logout</button>
   </nav>
