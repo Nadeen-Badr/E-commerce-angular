@@ -19,7 +19,17 @@
       <td>{{ product.price }}</td>
       <td>{{ product.stock }}</td>
       <td> <a [routerLink]="['/product', product.id]">View Details</a>
-        <a [routerLink]="['/edit-product', product.id]">Edit</a></td>
+        <a [routerLink]="['/edit-product', product.id]">Edit</a>
+    <!-- Delete button with confirmation -->
+    <button (click)="confirmDelete(product.id)" class="delete-btn">Delete</button>
+    <div *ngIf="showModal" class="modal-overlay">
+        <div class="modal-content">
+          <h3>Are you sure you want to delete this product?</h3>
+          <button (click)="deleteProduct(product.id)" class="confirm-btn">Yes</button>
+          <button (click)="cancelDelete()" class="cancel-btn">No</button>
+        </div>
+      </div>
+  </td>
 
     </tr>
   </tbody>
