@@ -6,11 +6,11 @@ import { ProductService } from '../services/product.service';
 import { MatDialog } from '@angular/material/dialog';
 import { CreateProductComponent } from '../create-product/create-product.component';
 
-
+import { RouterModule } from '@angular/router';
 @Component({
   selector: 'app-products',
   
-  imports: [CommonModule],
+  imports: [CommonModule,RouterModule],
   templateUrl: './products.component.html',
   styleUrls: ['./products.component.css']
 })

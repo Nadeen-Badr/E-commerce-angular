@@ -35,4 +35,12 @@ export class ProductService {
     });
     return this.http.post(this.baseUrl, productData, { headers });
   }
+  // Fetch product details by ID
+  getProductById(id: number): Observable<any> {
+    const headers = new HttpHeaders({
+      Authorization: `Bearer ${this.authService.getToken()}`,
+      accept: '*/*',
+    });
+    return this.http.get(`${this.baseUrl}/${id}`, { headers });
+  }
 }

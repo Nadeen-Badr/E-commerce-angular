@@ -4,10 +4,10 @@ import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import { ProductService } from '../services/product.service';
 import { CommonModule } from '@angular/common';
-
+import { RouterModule } from '@angular/router';
 @Component({
   selector: 'app-sellerproducts',
-  imports: [CommonModule],
+  imports: [CommonModule,RouterModule],
   templateUrl: './sellerproducts.component.html',
   styleUrl: './sellerproducts.component.css'
 })

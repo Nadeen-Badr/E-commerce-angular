@@ -1,0 +1,18 @@
+<div class="product-details-container">
+    <h2>Product Details</h2>
+  
+    <!-- Loading state -->
+    <div *ngIf="isLoading" class="loading-message">Loading product details...</div>
+  
+    <!-- Error message -->
+    <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+  
+    <!-- Product details -->
+    <div *ngIf="product && !isLoading" class="product-details">
+      <p><strong>ID:</strong> {{ product.id }}</p>
+      <p><strong>Name:</strong> {{ product.name }}</p>
+      <p><strong>Description:</strong> {{ product.description }}</p>
+      <p><strong>Price:</strong> {{ product.price | currency }}</p>
+      <p><strong>Stock:</strong> {{ product.stock }}</p>
+    </div>
+  </div>
