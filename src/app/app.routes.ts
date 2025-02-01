@@ -5,6 +5,7 @@ import { ProductsComponent } from './products/products.component';
 import { SellerproductsComponent } from './sellerproducts/sellerproducts.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { EditProductComponent } from './edit-product/edit-product.component';
+import { ProductListComponent } from './components/product-list/product-list.component';
 export const routes: Routes = [ 
     
     { path: 'register', component: RegisterComponent },
@@ -15,4 +16,5 @@ export const routes: Routes = [
         path: 'product/:id', // Dynamic route with :id parameter
         component: ProductDetailsComponent,
       },
-      { path: 'edit-product/:id', component: EditProductComponent },];
+      { path: 'edit-product/:id', component: EditProductComponent },
+      { path: 'buy', component: ProductListComponent },];

@@ -1,0 +1,59 @@
+<div class="products-container">
+    <h2>Products</h2>
+    <ul>
+      <li *ngFor="let product of products">
+        <span>{{ product.name }} - ${{ product.price }}</span>
+        <input
+          type="number"
+          [(ngModel)]="product.quantity"
+          min="1"
+          placeholder="Qty"
+        />
+        <button (click)="addToCart(product.id, product.quantity || 1)">
+          Add to Cart
+        </button>
+      </li>
+    </ul>
+  </div>
+  
+  <div class="cart-container">
+    <h2>Current Cart</h2>
+    <ul>
+      <li *ngFor="let item of cart">
+        <span>{{ item.productName }} - ${{ item.productPrice }} (x{{ item.quantity }})</span>
+        <button class="remove" (click)="removeFromCart(item.id)">Remove</button>
+      </li>
+    </ul>
+    <button (click)="placeOrder()">Place Order</button>
+    <button (click)="loadOrderHistory()">View Order History</button>
+  </div>
+  
+  <div class="order-container" *ngIf="orderDetails">
+    <h2>latest Order Details</h2>
+    <p><strong>Order ID:</strong> {{ orderDetails.id }}</p>
+    <p><strong>Order Date:</strong> {{ orderDetails.orderDate | date }}</p>
+    <p><strong>Total Amount:</strong> ${{ orderDetails.totalAmount }}</p>
+    <h3>Order Items</h3>
+    <ul>
+      <li *ngFor="let item of orderDetails.orderItems">
+        {{ item.productName }} - ${{ item.productPrice }} (x{{ item.quantity }})
+      </li>
+    </ul>
+  </div>
+  
+  <div class="order-container" *ngIf="orderHistory.length > 0">
+    <h2>Order History</h2>
+    <div *ngFor="let order of orderHistory">
+      <p><strong>Order ID:</strong> {{ order.id }}</p>
+      <p><strong>Order Date:</strong> {{ order.orderDate | date }}</p>
+      <p><strong>Total Amount:</strong> ${{ order.totalAmount }}</p>
+      <h3>Order Items</h3>
+      <ul>
+        <li *ngFor="let item of order.orderItems">
+          {{ item.productName }} - ${{ item.productPrice }} (x{{ item.quantity }})
+        </li>
+      </ul>
+      <hr />
+    </div>
+  </div>
+  

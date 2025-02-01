@@ -62,6 +62,9 @@ export class AppComponent {
    // this.isLoggedIn = false; // Update the login status
     this.router.navigate(['/sign-in']); // Redirect to the login page
 }
+buy(){
+  this.router.navigate(['/buy']);
+}
 }
 
 

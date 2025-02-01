@@ -1,0 +1,72 @@
+.products-container, .cart-container, .order-container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background: var(--soft-teal-gray, #e0f2f1); /* Light background */
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    color: var(--dark-gray, #333); /* Ensure dark text for contrast */
+  }
+  
+  h2, h3 {
+    color: var(--dark-teal, #004d40); /* Dark teal for headers */
+    text-align: center;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--white, #ffffff);
+    padding: 12px;
+    margin: 8px 0;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    color: var(--dark-gray, #222); /* Darken text inside list items */
+  }
+  
+  input[type="number"] {
+    width: 60px;
+    padding: 6px;
+    border: 1px solid var(--dark-gray, #666);
+    border-radius: 6px;
+    color: var(--dark-gray, #222); /* Ensure visible text */
+  }
+  
+  p {
+    color: var(--dark-gray, #222); /* Darken text for readability */
+  }
+  
+  button {
+    background: var(--teal, #00897b);
+    color: var(--white, #fff);
+    padding: 8px 12px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+    font-weight: bold;
+  }
+  
+  button:hover {
+    background: var(--dark-teal, #00695c);
+  }
+  
+  button.remove {
+    background: var(--muted-red, #d32f2f);
+  }
+  
+  button.remove:hover {
+    background: var(--dark-red, #b71c1c);
+  }
+  
+  hr {
+    border: 1px solid var(--light-gray, #ddd);
+    margin: 20px 0;
+  }
+  
